@@ -1,0 +1,42 @@
+{
+    "vpc": {
+      "cidr_block": "10.0.0.0/16",
+      "subnets": [
+        {
+          "name": "public-subnet",
+          "cidr_block": "10.0.1.0/24",
+          "availability_zone": "us-east-1a",
+          "public": true
+        },
+        {
+          "name": "private-subnet",
+          "cidr_block": "10.0.2.0/24",
+          "availability_zone": "us-east-1b",
+          "public": false
+        }
+      ],
+      "internet_gateway": true,
+      "nat_gateway": true
+    },
+    "route_tables": [
+      {
+        "name": "public-route-table",
+        "routes": [
+          {
+            "destination": "0.0.0.0/0",
+            "target": "internet-gateway"
+          }
+        ]
+      },
+      {
+        "name": "private-route-table",
+        "routes": [
+          {
+            "destination": "0.0.0.0/0",
+            "target": "nat-gateway"
+          }
+        ]
+      }
+    ]
+  }
+  
