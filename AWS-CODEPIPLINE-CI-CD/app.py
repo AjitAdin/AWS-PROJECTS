@@ -1,3 +1,4 @@
+#Sample app to demonstrate the AWS codebuild and codepipleine services with the automatic CI/CD process
 from flask import Flask
 
 app = Flask(__name__)
