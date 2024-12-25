@@ -1,8 +1,5 @@
 #!/bin/bash
 set -e
 
-# Pull the Docker image from Docker Hub
-docker pull ajitadin/simple-proj-flask
-
-# Run the Docker image as a container
-docker run -d -p 5000:5000 ajitadin/simple-proj-flask
+docker pull ajitadin/simple-proj-flask:latest
+docker run -d --name flask_container -p 5000:5000 ajitadin/simple-proj-flask:latest
