@@ -1,6 +1,10 @@
 version: 0.0
 os: linux
 
+files:
+  - source: /  # GitHub repository files will be automatically fetched
+    destination: /home/ubuntu/my-app  # The directory on the EC2 instance where you want the app
+
 hooks:
   ApplicationStop:
     - location: scripts/stop_container.sh
