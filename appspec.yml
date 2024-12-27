@@ -10,7 +10,9 @@ hooks:
     - location: scripts/stop_container.sh
       timeout: 300
       runas: root
+      ignoreErrors: false  # Consider adding this to fail deployment if the script fails
   AfterInstall:
     - location: scripts/start_container.sh
       timeout: 300
       runas: root
+      ignoreErrors: false  # Consider adding this to fail deployment if the script fails
